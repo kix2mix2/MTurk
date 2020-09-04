@@ -1,0 +1,120 @@
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+<!-- For the full list of available Crowd HTML Elements and their input/output documentation,
+      please refer to https://docs.aws.amazon.com/sagemaker/latest/dg/sms-ui-template-reference.html -->
+
+<!-- You must include crowd-form so that your task submits answers to MTurk -->
+<crowd-form answer-format="flatten-objects">
+
+
+    <div class="container col-lg-12 my-auto" style="max-width: 80%">
+        <!--  <crowd-instructions link-text="View instructions" link-type="button">-->
+        <!--    <short-summary>-->
+        <!--      <p>Provide a brief instruction here</p>-->
+        <!--    </short-summary>-->
+
+        <!--    <detailed-instructions>-->
+        <!--      <h3>Provide more detailed instructions here</h3>-->
+        <!--      <p>Include additional information</p>-->
+        <!--    </detailed-instructions>-->
+
+        <!--    <positive-example>-->
+        <!--      <p>Provide an example of a good answer here</p>-->
+        <!--      <p>Explain why it's a good answer</p>-->
+        <!--    </positive-example>-->
+
+        <!--    <negative-example>-->
+        <!--      <p>Provide an example of a bad answer here</p>-->
+        <!--      <p>Explain why it's a bad answer</p>-->
+        <!--    </negative-example>-->
+        <!--  </crowd-instructions>-->
+
+        <div class='row'>
+
+            <h1>
+                Colorblindness test
+            </h1>
+            <p>
+                We are creating a small prescreening HIT, to check the workers for a follow-up HIT for colorblindness.
+                The follow up HIT is an image annotation task, and you will have the opportunity to answer around 100
+                HITs.
+            </p>
+            <h5>Only take this HIT if you are willing to participate in the follow-up HITs!</h5>
+
+            <h5>Colorblind people will be allowed to take the follow-up HITs, we just need to collect this information
+                as well!</h5>
+            <br> <br>
+        </div>
+
+
+        <div class="row">
+            <p>Q1: What is your age?
+                <crowd-input name="favoriteColor" placeholder="example: 21" required type="number"></crowd-input>
+            </p>
+            <br>
+        </div>
+
+        <div class="row">
+            <p>Q2: What is your gender?
+                <crowd-radio-group>
+                    <crowd-radio-button name="male" value="tech">Male</crowd-radio-button>
+                    <crowd-radio-button name="female" value="politics">Female</crowd-radio-button>
+                    <crowd-radio-button name="nonbinary" value="politics">Non-binary</crowd-radio-button>
+                    <crowd-radio-button name="other" value="politics">Prefer not to say</crowd-radio-button>
+                </crowd-radio-group>
+            </p>
+            <br>
+        </div>
+
+
+        <div class="row"><p>Q3: What number do you see in this picture?</p></div>
+        <div class="row"><img src="https://scatterplots.s3.eu-central-1.amazonaws.com/mixed.png"
+                              style="max-height: 250px; max-width: 250px; padding: 10px">
+
+        </div>
+        <div class="row">
+            <crowd-radio-group>
+                <crowd-radio-button name="13" value="tech">13</crowd-radio-button>
+                <crowd-radio-button name="15" value="politics">15</crowd-radio-button>
+                <crowd-radio-button name="21" value="politics">21</crowd-radio-button>
+                <crowd-radio-button name="other" value="politics">Other number</crowd-radio-button>
+                <crowd-radio-button name="other" value="politics">No number</crowd-radio-button>
+            </crowd-radio-group>
+        </div>
+
+
+        <div class="row">
+            <p>Q4: What type of colorblindness do you have?</p>
+        </div>
+
+        <div class="row">
+            <crowd-checkbox name="rb" required>Red Blue</crowd-checkbox>
+            <br></div>
+        <div class="row">
+            <crowd-checkbox name="rb" required>Red Blue</crowd-checkbox>
+            <br></div>
+        <div class="row">
+            <crowd-checkbox name="rb" required>Red Blue</crowd-checkbox>
+            <br></div>
+
+        <br><br>
+        <div class="row">
+            <crowd-button form-action="submit" variant="primary">Submit</crowd-button>
+        </div>
+
+        <br> <br>
+    </div>
+</crowd-form>

@@ -1,0 +1,132 @@
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<script crossorigin="anonymous"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script crossorigin="anonymous"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+
+
+<crowd-form answer-format="flatten-objects">
+    <div class="container col-lg-12 my-auto" style="max-width: 80%">
+
+        <h1>Finding out colorblindness issues</h1>
+
+        <p>
+            In this hit you are asked to inspect two images, ...
+        </p>
+
+        <p>
+            Please read the instructions and check the examples provided!
+        </p>
+
+        <crowd-instructions link-text="View instructions" link-type="button">
+            <short-summary>
+                <p>Provide a brief instruction here</p>
+            </short-summary>
+
+            <detailed-instructions>
+                <h3>Provide more detailed instructions here</h3>
+                <p>Include additional information</p>
+            </detailed-instructions>
+
+            <positive-example>
+                <p>Provide an example of a good answer here</p>
+                <p>Explain why it's a good answer</p>
+            </positive-example>
+
+            <negative-example>
+                <p>Provide an example of a bad answer here</p>
+                <p>Explain why it's a bad answer</p>
+            </negative-example>
+        </crowd-instructions>
+        <br><br>
+
+        <p>
+            Some of the HITs are pre-annotated and will be used as tests to check if the work is done well.
+        </p>
+
+
+
+
+
+        <h5>You may answer as many HITs as you want!</h5>
+        <br> <br>
+
+        <!--    <div class="row">-->
+        <!--        <img src= '${original_image_url}'-->
+        <!--                     style="max-height: 100%; max-width: 100%; padding: 10px"/>-->
+
+        <!--        <img src= '${simulated_image_url}'-->
+        <!--                     style="max-height: 100%; max-width: 100%; padding: 10px"/>-->
+        <!--    </div>-->
+
+        <h5>Original Image</h5>
+        <div class="row">
+            <img src='https://scatterplots.s3.eu-central-1.amazonaws.com/InfoVis.1236.167_Protanomaly.jpg'
+                 style="max-height: 100%; max-width: 100%; padding: 10px"/>
+        </div>
+        <h5>Simulated Image</h5>
+        <div class="row">
+            <img src='https://scatterplots.s3.eu-central-1.amazonaws.com/InfoVis.1236.167.jpg'
+                 style="max-height: 100%; max-width: 100%; padding: 20px"/>
+        </div>
+
+
+        <div class="row">
+            <h4>Compare the two images below and assess if the color blind simulation has any issues</h4>
+        </div>
+        <div class="row">
+            <crowd-radio-group>
+                <crowd-radio-button name="Accessible" value="a">Accessible</crowd-radio-button>
+                <crowd-radio-button name="Borderline" value="b">Borderline</crowd-radio-button>
+                <crowd-radio-button name="Non-accesible" value="n">Non-accesible</crowd-radio-button>
+            </crowd-radio-group>
+        </div>
+
+        <br> <br>
+        <div class="row">
+            <h4>What issues apply for the simulated image?</h4>
+        </div>
+
+        <div class="row">
+            <crowd-checkbox name="rb" required>Issue 1</crowd-checkbox>
+            <br></div>
+        <div class="row">
+            <crowd-checkbox name="rb" required>Issue 2</crowd-checkbox>
+            <br></div>
+        <div class="row">
+            <crowd-checkbox name="rb" required>Issue 3</crowd-checkbox>
+            <br></div>
+
+        <br> <br>
+
+        <div class="row">
+            <h4>If you've identified issues not in the list above, please add them in the following field, separated by
+                a
+                comma</h4>
+            <p> Good and elaborate answers will be rewarded with bonuses after assessment!</p>
+        </div>
+
+        <div class="row">
+            <crowd-input name="other_issues" placeholder="example: Issue 1, Issue 2"
+                         style="width:100%"></crowd-input>
+            <br><br> <br></div>
+
+        <br><br>
+        <div class="row">
+            <crowd-button form-action="submit" variant="primary">Submit</crowd-button>
+        </div>
+
+        <br> <br>
+    </div>
+
+    <!--    <full-instructions></full-instructions>-->
+    <!--    <short-instructions></short-instructions>-->
+</crowd-form>
